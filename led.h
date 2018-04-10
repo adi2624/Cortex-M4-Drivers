@@ -12,6 +12,8 @@
 #define LED_RED								GPIOD_PIN_14
 #define LED_BLUE							GPIOD_PIN_15
 
+#define GPIO_BUTTON_PIN				0
+
 void led_init(void);
 
 void led_turn_on(GPIO_TypeDef *GPIOx, uint16_t pin);

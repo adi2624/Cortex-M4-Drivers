@@ -5,6 +5,10 @@ int main(void)
 {
 	uint32_t i;
 	led_init();
+	_HAL_RCC_GPIOA_CLK_ENABLE();
+	
+	hal_gpio_configure_interrupt(GPIO_BUTTON_PIN, INT_FALLING_EDGE);
+	hal_gpio_enable_interrupt(GPIO_BUTTON_PIN,EXTI0_IRQn);
 	while(1)
 	{
 	
@@ -107,3 +111,24 @@ void led_toggle(GPIO_TypeDef *GPIOx,uint16_t pin_no)
 	}
 	//hal_gpio_write_to_pin(GPIOx,pin_no, ~(hal_gpio_read_from_pin(GPIOx, pin_no)));
 }
+void EXTI0_IRQHandler(void)
+
+{
+
+	uint32_t i;
+  hal_gpio_clear_interrupt(GPIO_BUTTON_PIN);
+
+	/* Do youR TASK here */
+
+	led_turn_on(GPIOD,LED_BLUE);
+
+	led_turn_on(GPIOD,LED_ORANGE);
+
+	led_turn_on(GPIOD,LED_RED);
+
+	led_turn_on(GPIOD,LED_GREEN);
+	for(i=0;i<	6000000;i++);
+
+}
+
+
