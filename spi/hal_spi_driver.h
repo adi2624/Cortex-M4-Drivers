@@ -123,6 +123,7 @@
 	 SPI_TypeDef  *Instance ;//Base address. Refer to definition in microcontroller header file.
 	 spi_init_t   Init;			//SPI Parameters
 	 uint8_t 			*pTxBuffPtr;
+	 uint16_t     TxXferSize;
 	 uint8_t			TxXferCount;
 	 uint8_t      *pRxBuffPtr;
 	 uint16_t     RxXferSize;
