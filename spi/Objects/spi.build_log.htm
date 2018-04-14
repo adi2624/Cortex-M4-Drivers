@@ -26,17 +26,21 @@ Project File Date:  04/10/2018
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 5 (build 528)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
-Rebuild target 'Target 1'
-assembling startup_stm32f407xx.s...
+Build target 'Target 1'
 compiling hal_spi_driver.c...
-compiling system_stm32f4xx.c...
-compiling gpio_driver.c...
+hal_spi_driver.h(25): warning:  #47-D: incompatible redefinition of macro "SPI_CR1_LSBFIRST"  (declared at line 11456 of "C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h")
+  #define SPI_CR1_LSBFIRST						((uint32_t) 1<<7)
+hal_spi_driver.h(141): warning:  #1-D: last line of file ends without a newline
+  #endif
+hal_spi_driver.c(4): warning:  #177-D: function "hal_spi_configure_device_mode"  was declared but never referenced
+  static void hal_spi_configure_device_mode(SPI_TypeDef *SPIx, uint32_t master)
+hal_spi_driver.c: 4 warnings, 0 errors
 linking...
 .\Objects\spi.axf: Error: L6218E: Undefined symbol main (referred from __rtentry2.o).
 Not enough information to list image symbols.
 Not enough information to list load addresses in the image map.
 Finished: 2 information, 0 warning and 1 error messages.
-".\Objects\spi.axf" - 1 Error(s), 0 Warning(s).
+".\Objects\spi.axf" - 1 Error(s), 3 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -60,10 +64,10 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: Keil::Device:Startup:2.6.0
-      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
       Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f407xx.s
       Source file:   MDK\Device\Source\ARM\STM32F40xxx_41xxx_OPT.s
+      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
 
    * Component: ARM::CMSIS:CORE:5.0.1

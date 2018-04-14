@@ -138,6 +138,11 @@ Removing Unused input sections from the image.
     Removing gpio_driver.o(i.hal_gpio_read_from_pin), (12 bytes).
     Removing gpio_driver.o(i.hal_gpio_set_alt_function), (48 bytes).
     Removing gpio_driver.o(i.hal_gpio_write_to_pin), (28 bytes).
+    Removing hal_spi_driver.o(.rev16_text), (4 bytes).
+    Removing hal_spi_driver.o(.revsh_text), (4 bytes).
+    Removing hal_spi_driver.o(.rrx_text), (6 bytes).
+    Removing hal_spi_driver.o(i.hal_spi_configure_device_mode), (2 bytes).
+    Removing hal_spi_driver.o(i.hal_spi_init), (2 bytes).
     Removing system_stm32f4xx.o(.rev16_text), (4 bytes).
     Removing system_stm32f4xx.o(.revsh_text), (4 bytes).
     Removing system_stm32f4xx.o(.rrx_text), (6 bytes).
@@ -145,4 +150,4 @@ Removing Unused input sections from the image.
     Removing system_stm32f4xx.o(.constdata), (24 bytes).
     Removing system_stm32f4xx.o(.data), (4 bytes).
 
-20 unused section(s) (total 622 bytes) removed from the image.
+25 unused section(s) (total 640 bytes) removed from the image.

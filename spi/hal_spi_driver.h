@@ -70,7 +70,7 @@
 #define SPI_REG_SR_RXNE_FLAG	      ((uint32_t) 1<<0)
 
 #define RESET 0
-#defien SET		1
+#define SET		1
 
 //BASE ADDRESSES FOR SPI
 
@@ -120,7 +120,7 @@
  
  typedef struct __spi_handle_t
  {
-	 SPI_TypeDef  *Instance //Base address. Refer to definition in microcontroller header file.
+	 SPI_TypeDef  *Instance ;//Base address. Refer to definition in microcontroller header file.
 	 spi_init_t   Init;			//SPI Parameters
 	 uint8_t 			*pTxBuffPtr;
 	 uint8_t			TxXferCount;
@@ -131,5 +131,11 @@
 	 
  }spi_handle_t;
 
+void hal_spi_init(spi_handle_t *spi_handle);
+void hal_spi_master_tx(spi_handle_t *spi_handle,uint8_t *buffer,uint32_t len);
+void hal_spi_slave_rx(spi_handle_t *spi_handle, uint8_t *rcv_buffer, uint32_t len);
+void hal_spi_master_rx(spi_handle_t *spi_handle, uint8_t *buffer, uint32_t len);
+void hal_spi_slave_tx(spi_handle_t *spi_handle, uint8_t *buffer, uint32_t len);
+void hal_i2c_spi_irq_handler(spi_handle_t *hspi);
 
 #endif
